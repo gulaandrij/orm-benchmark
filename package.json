@@ -1,0 +1,30 @@
+{
+   "name": "bench",
+   "version": "1.0.0",
+   "description": "",
+   "scripts": {
+      "start": "ts-node dist/index.ts",
+      "tsc": "tsc",
+      "bench": "yarn bench:typeorm:simple && yarn bench:typeorm:eager && yarn bench:objection:simple && yarn bench:objection:eager",
+      "bench:typeorm:simple":"autocannon http://localhost:3000/typeorm",
+      "bench:typeorm:eager":"autocannon http://localhost:3000/typeorm/eager",
+      "bench:objection:simple":"autocannon http://localhost:3000/objection",
+      "bench:objection:eager":"autocannon http://localhost:3000/objection/eager"
+   },
+   "dependencies": {
+      "@types/express": "^4.17.2",
+      "@types/node": "^12.12.17",
+      "autocannon": "^4.4.1",
+      "express": "^4.17.1",
+      "knex": "^0.20.4",
+      "objection": "^2.0.7",
+      "pg": "^7.15.1",
+      "reflect-metadata": "^0.1.10",
+      "sqlite3": "^4.0.3",
+      "ts-loader": "^5.3.0",
+      "ts-node": "^8.5.4",
+      "tsconfig-paths": "^3.9.0",
+      "typeorm": "0.2.21",
+      "typescript": "^3.7.3"
+   }
+}
